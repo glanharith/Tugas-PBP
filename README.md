@@ -1,6 +1,8 @@
 Link aplikasi Heroku: https://tugas-2-pbp-glan.herokuapp.com/katalog/ 
 
 **1. Bagan _request client_ ke web aplikasi Django** 
+![Gambar Bagan Tugas 2](https://user-images.githubusercontent.com/112403421/189969418-930c7d5d-5a91-4bc9-b96d-d2abfe239fe2.JPG)
+
 Pertama, saat membuka web menggunakan link atau URL yang tersedia, terkirim request untuk mengisi konten dari halaman web yang sudah dibuat ke internet atau ke launchernya (Heroku). Setelah itu request dilanjutkan ke host atau database yang sudah di buat, dalam kasus tugas 2 ini ke settings.py. Setelah request diterima, URLS.py yang utama (di dalam folder project_django) akan mengakses views.py. Views.py berguna untuk menghubungkan models.py dengan file html-nya. Models.py berisi pelengkap atau data yang nanti akan di gabungkan di html. Setelah itu, file html akan diterima launcher menjadi Web dengan tampilan sesuai dengan kode yang ada di file html dan lalu akan ditampilkan di device user yang membuka web.
 
 **2._Virtual Enviroment_**
