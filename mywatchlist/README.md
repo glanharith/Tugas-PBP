@@ -13,7 +13,7 @@
 Screenshot Postman:
 1. HTML
     ![image](https://user-images.githubusercontent.com/112403421/191532938-470500b1-282f-4d95-95a3-4863c2988274.png)
-2. json
+2. JSON
     ![image](https://user-images.githubusercontent.com/112403421/191533133-55201dc3-d76d-46f4-ac40-c4c976207af8.png)
 3. XML
     ![image](https://user-images.githubusercontent.com/112403421/191533154-51d36d12-580f-43c8-8001-8ab1ca62b885.png)
