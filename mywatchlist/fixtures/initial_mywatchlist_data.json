@@ -1,0 +1,112 @@
+[
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":1,
+        "fields":{
+            "watched":"sudah",
+            "title":"Lost in Translation",
+            "rating":5,
+            "release_date":"2003",
+            "review":"Dari segi sinemantografi sangat memuaskan dan dapat feel vibes Jepangnya.Untuk fase dan alur sangat slow phase, tapi jadi dapet sedihnya dan maknanya"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":2,
+        "fields":{
+            "watched":"sudah",
+            "title":"Her",
+            "rating":5,
+            "release_date":"2013",
+            "review":"Dari segi sinemantografi sangat memuaskan, sangat menggambarkan kesepian dan depresi, jadi feelsnya dapet"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":3,
+        "fields":{
+            "watched":"belum",
+            "title":"Drive My Car",
+            "rating":4,
+            "release_date":"2021",
+            "review":"Belum ditonton"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":4,
+        "fields":{
+            "watched":"sudah",
+            "title":"Dillan 1991",
+            "rating":2,
+            "release_date":"2019",
+            "review":"film yang membosankan dan terlalu klise"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":5,
+        "fields":{
+            "watched":"sudah",
+            "title":"Black Panther",
+            "rating":4,
+            "release_date":"2018",
+            "review":"Visual efek yang sangat memanjakan mata dan alur cerita yang sangat mendalam"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched":"sudah",
+            "title":"Pengabdi Setan",
+            "rating":4,
+            "release_date":"2022",
+            "review":"Horror yang tidak hanya jumpscare dan dapat membekas dimemori"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched":"sudah",
+            "title":"Spider-Man: Into the Spider-Verse",
+            "rating":5,
+            "release_date":"2018",
+            "review":"Animasi yang beda dan sangat memanjakan mata. Alur cerita juga padat."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched":"belum",
+            "title":"Back to The Future",
+            "rating":4,
+            "release_date":"1985",
+            "review":"Sangat merepresentasikan film klasik di tahun 80an"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched":"belum",
+            "title":"Unbroken",
+            "rating":4,
+            "release_date":"2014",
+            "review":"Belum ditonton"
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched":"sudah",
+            "title":"Sayap-Sayap Patah",
+            "rating":4,
+            "release_date":"2022",
+            "review":"Belum ditonton"
+        }
+    }
+]
