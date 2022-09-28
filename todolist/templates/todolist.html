@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mukta:wght@200&display=swap" rel="stylesheet">
+<style>
+    body{
+        font-family: 'Kanit', sans-serif;
+        background-color: #4adede;
+    }
+</style>
+<body>
+
+        <div class="rectangle"> <h1 style="text-align: center"><font size="30">To Do List {{username}}</font></h1></div>   
+        <h2 style="text-align: center">Hi, {{username}}</h2>
+        <p style="text-align:center">What productive things you want to do today?🤔</p>
+
+</body>
+<style>
+    .rectangle{
+        height: 100px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #c2edce;
+        transform: translate(105%);
+        border-radius: 1cm;
+        border: 3px solid white;
+        color: white;
+
+    }
+    table{
+        font-family: 'Mukta', sans-serif;
+        
+    }
+    .content tr{
+        background-color: #c2edce;
+        color: white;
+        text-align: center;
+    }
+    .content td{
+        padding: 12px 15px;
+        background-color: white;
+        color: black;
+    }
+    .content{
+        border-bottom: 10px solid #c2edce;
+    }
+</style>
+<table class="content">
+    <tr>
+    <th style="width: 320px;">Tanggal</th>
+    <th style="width: 320px;">Judul</th>
+    <th style="width: 320px;">Deskripsi</th>
+    <th style="width: 150px;">Status</th>
+    <th colspan="2",style="width=320">Ubah Status Tugas</th>
+    </tr>
+    {% for todo in data %}
+    <tr bgcolor="white">
+        <td>{{todo.date}}</td>
+        <td>{{todo.title}}</td>
+        <td>{{todo.description}}</td>
+        <td>{{todo.status}}</td>
+        <td><button class="button-ubah"><a href="{% url 'todolist:ganti_status' todo.id %}">Change Status</a></button></td>
+        <td><button class="button-hapus"><a href="{% url 'todolist:delete_task' todo.id %}">Delete</a></button></td>
+    </tr>
+    {% endfor %}
+</table>
+<p></p>
+
+<style>
+    .button-ubah{
+        background-color: #c2edce;
+        margin: auto;
+        border: 1px solid black;
+        width: 110px;
+        border-radius: 12cm;
+        font-family: 'Mukta', sans-serif;
+    }
+    .button-hapus{
+        background-color: #c2edce;
+        margin: auto;
+        border: 1px solid black;
+        width: 110px;
+        border-radius: 12cm;
+        font-family: 'Mukta', sans-serif;
+    }
+</style>
+
+
+<button class="button-one"><a href="{% url 'todolist:create_new_todolist' %}">Add New Todolist</a></button>
+<p></p>
+<button class="button-logout"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<style>
+    .button-one{
+        background-color: #c2edce;
+        margin: auto;
+        border: 1px solid black;
+        display: block;
+        border-radius: 12cm;
+        font-family: 'Mukta', sans-serif;
+        height: 30px;
+    }
+    .button-logout{
+        background-color: #c2edce;
+        margin: auto;
+        border: 1px solid black;
+        display: block;
+        font-family: 'Mukta', sans-serif;
+        border-radius: 12cm;
+
+    }
+</style>
+
+{% endblock content %}

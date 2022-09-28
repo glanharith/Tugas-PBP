@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Tambahkan Task Kamu</title>
+{% endblock meta %}
+
+{% block content %}  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Rubik:wght@300&display=swap" rel="stylesheet">
+<body>
+<div class = "login">
+    <h1 class="h-one" style="color: white;">What are you </h1>
+    <h1 class="h-two" style="color:white">planning to do today?</h1>
+    
+        <form method="POST" >  
+            {% csrf_token %}  
+            <table class="tab">  
+                <label for="title">Judul: </label>
+                <br>
+                <input type="text" id="title" name="title" style="width: 250px;">
+                <p></p>
+
+                <label for="description">Deskripsi: </label>
+                <br>
+                <input type="text" id="description" name="description" style="width: 250px; height: 100px;">
+                <p></p>
+
+            </table>
+            <button type="submit">Tambah</button>
+        </form>
+        <p></p>
+        <button type="submit"><a href="{% url 'todolist:show_todolist' %}">Kembali</a></button>
+</div> 
+</body>
+
+<style>
+    .login{
+        text-align: center;
+        position: relative;
+        top: 120px;
+        font-family: 'Rubik', sans-serif;
+
+    }
+    body{
+        background-color: #4adede;
+        position: relative;
+        bottom: 70px;
+    }
+    .h-one{
+        position: relative;
+        bottom: 30px;
+    }
+    .h-two{
+        position: relative;
+        bottom: 30px;
+    }
+</style>
+
+{% endblock content %}

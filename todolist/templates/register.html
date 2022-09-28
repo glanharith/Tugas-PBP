@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Registrasi Akun</title>
+{% endblock meta %}
+
+{% block content %}  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+<body class="all">
+<div class = "login">
+    
+    <h1 style="color: white;">Sign Up Todolist Web</h1>  
+
+        <form method="POST" >  
+            {% csrf_token %}  
+            <table>  
+                {{ form.as_table }}  
+                <tr>  
+                    <td ></td>
+                    <td><input type="submit" name="submit" value="Daftar"/></td>  
+                </tr>  
+            </table>  
+        </form>
+
+    {% if messages %}  
+        <ul>   
+            {% for message in messages %}  
+                <li>{{ message }}</li>  
+                {% endfor %}  
+        </ul>   
+    {% endif %}
+
+</div>  
+</body>
+<style>
+    .login{
+        text-align: center;
+        position: relative;
+        top: 120px;
+        font-family: 'Rubik', sans-serif;
+    }
+    table{
+        font-family: 'Mukta', sans-serif;
+        background-color: #555;
+        transform: translate(67%);
+        background-color: #c2edce;
+        border: 3px solid white;
+        border-radius: 12px;
+        position: relative;
+        bottom: 70px;
+
+    }
+    table tr{
+        vertical-align: top;
+        transform: translate(-20%);
+    }
+    table td{
+        font-size: 10px;
+        
+
+    }
+    table th,td,tr{
+        padding:15px;
+        position: relative;
+        left: 50px;
+
+    }
+    .all{
+        background-color: #4adede;
+    }
+    h1{
+        padding-top: 20px;
+        position: relative;
+        bottom: 100px;
+
+    }
+
+</style>
+
+{% endblock content %}

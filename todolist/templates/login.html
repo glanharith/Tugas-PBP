@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Login</title>
+{% endblock meta %}
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+<div class = "login">
+    <h1 style="color:white">Welcome to Todolist Web</h1>
+    <h2 style="color: white;">Login</h2>
+    <body class="body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table class="table-login">
+            <tr>
+                <td>Username: </td>
+                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+            </tr>      
+            <tr>
+                <td>Password: </td>
+                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn-login-btn" type="submit" value="Login"></td>
+            </tr>
+        </table>
+    </body>
+    </form>
+
+    <style>
+        .body{
+            background-color: #4adede ;
+            position: relative;
+            bottom: 100px;
+        }
+        .login{
+            align-items: center;
+            display: block;
+            text-align: center;
+            position: relative;
+            top: 200px;
+            font-family: 'Rubik', sans-serif;
+                        
+        }
+        .table-login{
+            align-items: center;
+            transform: translate(170%);
+            padding: 20px;
+            font-family: 'Mukta', sans-serif;
+            height: 50px;
+            width: 100px;
+            background-color: #c2edce;
+            border-radius: 12px;
+        }
+        .btn-login-btn{
+            position: relative;
+            top: 20px;
+            right: 39px;
+        }
+        li{
+            transform: translate(-1.9%);
+        }
+        .last{
+            padding: 10px;
+            font-size: 12px;
+        }
+
+
+
+    </style>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+        
+    <div class="last">Sudah punya akun belum? <a href="{% url 'todolist:register' %}">Buat Akun Disini</a></div>
+
+</div>
+
+{% endblock content %}
