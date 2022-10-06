@@ -8,26 +8,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Rubik:wght@300&display=swap" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
 <body>
 <div class = "login">
-    <h1 class="h-one" style="color: white;">What are you </h1>
-    <h1 class="h-two" style="color:white">planning to do today?</h1>
+    <h1 class="h-one" style="color: black;">What are you </h1>
+    <h1 class="h-two" style="color:black">planning to do today?</h1>
     
         <form method="POST" >  
             {% csrf_token %}  
             <table class="tab">  
-                <label for="title">Judul: </label>
+                <label for="title" style="color:black ;">Judul: </label>
                 <br>
                 <input type="text" id="title" name="title" style="width: 250px;">
                 <p></p>
 
-                <label for="description">Deskripsi: </label>
+                <label for="description" style="color: black;">Deskripsi: </label>
                 <br>
                 <input type="text" id="description" name="description" style="width: 250px; height: 100px;">
                 <p></p>
 
             </table>
-            <button type="submit">Tambah</button>
+            <button type="submit"">Tambah</button>
         </form>
         <p></p>
         <button type="submit"><a href="{% url 'todolist:show_todolist' %}">Kembali</a></button>
@@ -43,7 +47,7 @@
 
     }
     body{
-        background-color: #4adede;
+        background-color: white;
         position: relative;
         bottom: 70px;
     }

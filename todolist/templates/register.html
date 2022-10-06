@@ -8,11 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Rubik:wght@300&display=swap" rel="stylesheet">
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
 <body class="all">
 <div class = "login">
     
-    <h1 style="color: white;">Sign Up Todolist Web</h1>  
+    <h1 style="color: black;">Sign Up Todolist Web</h1>  
 
         <form method="POST" >  
             {% csrf_token %}  
@@ -46,8 +49,8 @@
         font-family: 'Mukta', sans-serif;
         background-color: #555;
         transform: translate(67%);
-        background-color: #c2edce;
-        border: 3px solid white;
+        background-color: white;
+        border: 2px solid black;
         border-radius: 12px;
         position: relative;
         bottom: 70px;
@@ -69,7 +72,7 @@
 
     }
     .all{
-        background-color: #4adede;
+        background-color: white;
     }
     h1{
         padding-top: 20px;
