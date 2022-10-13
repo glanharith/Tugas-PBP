@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -7,4 +8,4 @@ class Task(models.Model):
     date = models.DateField(auto_now_add=True)
     title = models.TextField()
     description = models.TextField()
-    status = models.TextField(default="Belum")
+    status = models.BooleanField(default=False)

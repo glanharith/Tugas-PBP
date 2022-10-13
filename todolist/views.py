@@ -1,4 +1,5 @@
 import datetime
+from operator import truediv
 from todolist.models import Task
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -7,8 +8,11 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpRequest, HttpResponseRedirect
 from django.urls import reverse
+from django.core import serializers
+from django.http.response import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='login/')
@@ -67,17 +71,40 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+@csrf_exempt
 def delete_task(request,id):
-    task = Task.objects.filter(user=request.user).get(pk=id)
-    task.delete()
-    return redirect('todolist:show_todolist')
+    if request.method == "DELETE":
+        task = Task.objects.filter(id=id)
+        task.delete()
+    return JsonResponse({"var":"todo"})
 
 def ganti_status(request,id):
     task = Task.objects.filter(user=request.user).get(pk=id)
-    if task.status == "Belum":
-        task.status = "Sudah"
+    if(task.status=="0"):
+        task.status = "1"
         task.save()
     else:
-        task.status = "Belum"
+        task.status = "0"
         task.save()
     return redirect('todolist:show_todolist')
+
+@login_required(login_url='login/')
+def show_json(request):
+    task = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', task), content_type='application/json')
+
+@login_required(login_url='login/')
+def post_json(request):
+    if request.method == "POST":
+        add_todolist = Task(
+            title = request.POST.get('todo'),
+            description = request.POST.get('desc'),
+            user = request.user,
+            date = datetime.datetime.now(),
+            status = False
+        )
+        add_todolist.save()
+    return JsonResponse({"var" : "todolist"})
+
+
+

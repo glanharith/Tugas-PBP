@@ -19,19 +19,23 @@
     
         <form method="POST" >  
             {% csrf_token %}  
-            <table class="tab">  
-                <label for="title" style="color:black ;">Judul: </label>
-                <br>
-                <input type="text" id="title" name="title" style="width: 250px;">
-                <p></p>
+            
+            <div class = 'table-responsive'>
+                <table class="tab">  
+                    <label for="title" style="color:black ;">Judul: </label>
+                    <br>
+                    <input type="text" id="title" name="title" style="width: 250px;">
+                    <p></p>
 
-                <label for="description" style="color: black;">Deskripsi: </label>
-                <br>
-                <input type="text" id="description" name="description" style="width: 250px; height: 100px;">
-                <p></p>
+                    <label for="description" style="color: black;">Deskripsi: </label>
+                    <br>
+                    <input type="text" id="description" name="description" style="width: 250px; height: 100px;">
+                    <p></p>
 
-            </table>
-            <button type="submit"">Tambah</button>
+                </table>
+            </div>
+            <button type="submit">Tambah</button>
+
         </form>
         <p></p>
         <button type="submit"><a href="{% url 'todolist:show_todolist' %}">Kembali</a></button>
